@@ -20,16 +20,78 @@
         android:id="@+id/teamLogo"
         android:layout_marginTop="15dp"
         android:layout_below="@id/header"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
         android:src="@drawable/dotalogo"/>
 
-    <TextView
-        android:layout_below="@id/teamLogo"
+    <EditText
+        android:id="@+id/teamName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Team Name:"
-        android:textSize="20dp"/>
+        android:layout_below="@id/teamLogo"
+        android:hint="Team Name"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/teamDPC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamName"
+        android:hint="DPC Points"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/member1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamDPC"
+        android:hint="Member Position 1"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/member2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/member1"
+        android:hint="Member Position 2"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/member3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/member2"
+        android:hint="Member Position 3"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/member4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/member3"
+        android:hint="Member Position 4"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/member5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/member4"
+        android:hint="Member Position 5"
+        android:layout_centerHorizontal="true"/>
+    
+    <Button
+        android:id="@+id/saveButton"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Data"
+        android:layout_below="@id/member5"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/saveButton"/>
 </RelativeLayout>

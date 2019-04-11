@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     GridView gridView;
 
-    private String[] teamNames = {
+    public boolean firstTry=true;
+    public String[] teamNames = {
             "Team Liquid",
             "Evil Geniuses",
             "Virtus Pro",
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             "Team OG"
     };
 
-    private String[][] teamMembers = {
+    public String[][] teamMembers = {
             {"Matumbaman", "Miracle-", "MinD_ContRoL", "GH", "KuroKy"},
             {"Arteezy", "SumaiL", "s4", "Cr1t-", "Fly"},
             {"RAMZES666", "No[o]ne", "9pasha", "RodjER", "Solo"},
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             {"ana", "Tompson", "7ckngMad", "JerAx", "N0tail"}
     };
 
-    private int[] teamImages = {
+    public int[] teamImages = {
             R.drawable.liquid,
             R.drawable.evilgeniuses,
             R.drawable.virtuspro,
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.teamog
     };
 
-    private int[] teamDPC = {
+    public int[] teamDPC = {
             525,
             5850,
             10950,

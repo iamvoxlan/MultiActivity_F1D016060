@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ public class TeamDataActivity extends AppCompatActivity {
     TextView teamDPC;
     TextView allTeamMember;
     int index;
+    int logo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,7 @@ public class TeamDataActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String[] teamMember = intent.getStringArrayExtra("teamMember");
         String memberNames = "";
+        logo = intent.getIntExtra("teamLogo", 0);
         for (int index=0; index<teamMember.length; index++)
         {
             memberNames=memberNames+teamMember[index]+"\n";
@@ -37,16 +40,25 @@ public class TeamDataActivity extends AppCompatActivity {
         teamLogo.setImageResource(intent.getIntExtra("teamLogo", 0));
         String dpcPoints = Integer.toString(intent.getIntExtra("teamDPC", 0));
         teamDPC.setText("DPC Points: "+ dpcPoints);
-        allTeamMember.setText(memberNames   );
+        allTeamMember.setText(memberNames);
         index = intent.getIntExtra("index", 0);
 
-
+        Button editButton = findViewById(R.id.editButton);
+        editButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                editData(index, logo);
+            }
+        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 
-    private void editData(View view) {
-        Intent newIntent = new Intent()
+    private void editData(int index, int logo) {
+        Intent newIntent = new Intent(getApplicationContext(), EditActivity.class);
+        newIntent.putExtra("index", index);
+        newIntent.putExtra("logo", logo);
+        startActivity(newIntent);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

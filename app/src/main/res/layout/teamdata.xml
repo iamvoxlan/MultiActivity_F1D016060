@@ -52,12 +52,14 @@
         android:layout_below="@id/infoheader"
         android:textSize="15dp"/>
     <Button
+        android:id="@+id/editButton"
         android:background="@color/colorPrimaryDark"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/memberList"
         android:text="Edit Data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="editData"/>
+
+        />
 
 </RelativeLayout>
