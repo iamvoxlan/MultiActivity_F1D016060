@@ -53,6 +53,49 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (!firstTry)
+        {
+            Intent intent = new Intent(getApplicationContext(), TeamDataActivity.class);
+            startActivity(intent);
+            Intent getData  = getIntent();
+            int index = getData.getIntExtra("index", 0);
+            String newName = getData.getStringExtra("newName");
+            int newDPC = getData.getIntExtra("newDPC", 0);
+            String member1 = getData.getStringExtra("member1");
+            String member2 = getData.getStringExtra("member2");
+            String member3 = getData.getStringExtra("member3");
+            String member4 = getData.getStringExtra("member4");
+            String member5 = getData.getStringExtra("member5");
+
+            if (newName!=null || !newName.equals(""))
+            {
+                teamNames[index] = newName;
+            }
+            if (newDPC!=0)
+            {
+                teamDPC[index] = newDPC;
+            }
+            if (member1!=null || !member1.equals(""))
+            {
+                teamMembers[index][0] = member1;
+            }
+            if (member2!=null || !member2.equals(""))
+            {
+                teamMembers[index][1] = member2;
+            }
+            if (member3!=null || !member3.equals(""))
+            {
+                teamMembers[index][2] = member3;
+            }
+            if (member4!=null || !member4.equals(""))
+            {
+                teamMembers[index][3] = member4;
+            }
+            if (member5!=null || !member5.equals(""))
+            {
+                teamMembers[index][4] = member5;
+            }
+        }
         gridView = findViewById(R.id.gridviewgan);
         gridView.setAdapter(new GridAdapter());
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -64,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("teamMember", teamMembers[position]);
                 intent.putExtra("teamDPC", teamDPC[position]);
                 intent.putExtra("index", position);
+                firstTry=false;
                 startActivity(intent);
             }
         });

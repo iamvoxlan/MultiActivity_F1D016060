@@ -33,7 +33,7 @@ public class EditActivity extends AppCompatActivity {
 
         teamName = editName.getText().toString();
         tempDPC = editDPC.getText().toString();
-        //teamDPC = Integer.parseInt(tempDPC);
+        teamDPC = Integer.valueOf(teamDPC);
         member1 = editMember1.getText().toString();
         member2 = editMember2.getText().toString();
         member3 = editMember3.getText().toString();
@@ -44,7 +44,7 @@ public class EditActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                saveData(index, teamName, member1, member2, member3, member4, member5);
+                saveData(index, teamDPC, teamName, member1, member2, member3, member4, member5);
             }
         });
 
@@ -58,10 +58,17 @@ public class EditActivity extends AppCompatActivity {
         });
 
     }
-    private void saveData(int index, String name, String member1, String member2, String member3, String member4, String member5) {
+    private void saveData(int index, int newDPC, String name, String member1, String member2, String member3, String member4, String member5) {
         Intent saveData = new Intent(getApplicationContext(), MainActivity.class);
-        saveData.putExtra("newName", name);
         saveData.putExtra("index", index);
+        saveData.putExtra("newName", name);
+        saveData.putExtra("newDPC", newDPC);
+        saveData.putExtra("member1", member1);
+        saveData.putExtra("member2", member2);
+        saveData.putExtra("member3", member3);
+        saveData.putExtra("member4", member4);
+        saveData.putExtra("member5", member5);
+
         startActivity(saveData);
     }
 

@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/teamName"
         android:hint="DPC Points"
+        android:inputType="number"
         android:layout_centerHorizontal="true"/>
     <EditText
         android:id="@+id/member1"
