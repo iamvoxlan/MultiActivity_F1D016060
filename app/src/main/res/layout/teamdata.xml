@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TeamDataActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/teamName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="Team Liquid"
+        android:textSize="25dp"/>
+    
+    <ImageView
+        android:id="@+id/teamLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/liquid"
+        android:layout_below="@id/teamName"
+        android:layout_marginTop="25dp"/>
+    
+    <TextView
+        android:layout_marginTop="15dp"
+        android:text="DPC point"
+        android:id="@+id/teamDPC"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/teamLogo"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/infoheader"
+        android:layout_centerHorizontal="true"
+        android:text="Member"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@id/teamDPC"/>
+    <TextView
+        android:text="Member"
+        android:id="@+id/memberList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/infoheader"
+        android:textSize="15dp"/>
+    <Button
+        android:background="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/memberList"
+        android:text="Edit Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="editData"/>
+
+</RelativeLayout>
