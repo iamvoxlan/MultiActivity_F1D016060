@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences sfLogin;
     GridView gridView;
 
     public boolean firstTry=true;
@@ -55,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sfLogin = getSharedPreferences("loginData", MODE_PRIVATE);
 
         if (!firstTry)
         {
@@ -118,34 +116,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        Boolean isLoggedIn = sfLogin.getBoolean("isLogin", false);
-        if (isLoggedIn){
-            Intent intent = new Intent(this, EditActivity.class);
-            startActivity(intent);
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        SharedPreferences.Editor editor = sfLogin.edit();
-        editor.clear();
-        editor.apply();
-    }
-
-    public void doLogin (View view){
-        SharedPreferences.Editor editor = sfLogin.edit();
-        editor.putString("username", "TeamLIQULIQUID");
-        editor.putBoolean("isLogin", true);
-        editor.apply();
-        Intent intent = new Intent (this, EditActivity.class);
-        startActivity(intent);
-    }
 
     private class GridAdapter extends BaseAdapter{
         @Override

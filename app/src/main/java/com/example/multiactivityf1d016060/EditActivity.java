@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class EditActivity extends AppCompatActivity {
 
-    SharedPreferences sfLogin;
     String member1, member2, member3, member4, member5, teamName, tempDPC;
     int index, teamDPC;
     ImageView teamlogo;
@@ -21,13 +20,6 @@ public class EditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
-        sfLogin = getSharedPreferences("loginData", MODE_PRIVATE);
-
-        TextView textView = findViewById(R.id.header);
-
-        String username = sfLogin.getString("username", "usernameGan");
-
-        textView.setText(username);
 
         Intent intent = getIntent();
         index=intent.getIntExtra("index", 0);
