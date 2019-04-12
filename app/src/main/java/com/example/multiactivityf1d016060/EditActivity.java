@@ -1,15 +1,18 @@
 package com.example.multiactivityf1d016060;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class EditActivity extends AppCompatActivity {
 
+    SharedPreferences sfLogin;
     String member1, member2, member3, member4, member5, teamName, tempDPC;
     int index, teamDPC;
     ImageView teamlogo;
@@ -17,6 +20,14 @@ public class EditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+
+        sfLogin = getSharedPreferences("loginData", MODE_PRIVATE);
+
+        TextView textView = findViewById(R.id.header);
+
+        String username = sfLogin.getString("username", "usernameGan");
+
+        textView.setText(username);
 
         Intent intent = getIntent();
         index=intent.getIntExtra("index", 0);
